@@ -1,0 +1,58 @@
+:root{
+  --white: #ffffff;
+  --main: #FF9514;
+  --hover: #000000;
+  --gray-text: #575757;
+  --gray-main: #E1E1E1;
+
+}
+@font-face {
+  font-weight: 400;
+  font-family: "Gilroy";
+  src: url("../fonts/Gilroy-Black.ttf")
+}
+
+@font-face {
+  font-weight: 400;
+  font-family: "Nekst";
+  src: url("../fonts/Nekst-Black.ttf");
+}
+
+body {
+    margin: 0;
+    font-family: "Nekst", "Gilroy" ;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  h1, h2{
+    font-family: "Nekst";
+  }
+  h2, p, label{
+    color: var(--gray-text);
+  }
+
+.description{
+    visibility: hidden;
+}  
+.btn{
+  height: 68px;
+  color: var(--white);
+  background: var(--main);
+  border: 0px;
+  border-radius: 50px;
+  cursor: pointer;
+
+}
+input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
+  background-image: linear-gradient(#ff4500, #ff4500);
+  background-size: 70% 100%;
+  cursor: pointer;
+}

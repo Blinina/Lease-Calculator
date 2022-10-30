@@ -1,0 +1,44 @@
+@media screen and (max-width:768px){
+    h1{
+        font-size: 34px!important;
+        font-weight: bold;
+        line-height: 30.6px!important;
+      }
+      h3, input{
+        font-size: 22px;
+        line-height: 20px;
+      }
+    .app{
+        margin: 0 20px auto;
+    }
+    .title{
+        margin:44px 0 32px 1px!important;
+    }
+    .item{
+        height: 96px;
+        margin-bottom: 16px!important;
+    }
+    .result{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        column-gap: 0px;
+        row-gap: 29px;
+    }
+    .result-btn{
+        justify-content: center;
+        align-items: center;
+    }
+    .btn{
+        height: 60px;
+    }
+    .payment{
+        font-size: 22px!important;
+        line-height: 20px!important;
+    }
+    .ppt{
+     width: 67px;
+     height: 48px;
+
+}
+}

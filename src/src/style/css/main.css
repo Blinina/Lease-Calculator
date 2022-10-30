@@ -1,9 +1,125 @@
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 34px !important;
+    font-weight: bold;
+    line-height: 30.6px !important;
+  }
+  h3, input {
+    font-size: 22px;
+    line-height: 20px;
+  }
+  .app {
+    margin: 0 20px auto;
+  }
+  .title {
+    margin: 44px 0 32px 1px !important;
+  }
+  .item {
+    height: 96px;
+    margin-bottom: 16px !important;
+  }
+  .result {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    column-gap: 0px;
+    row-gap: 29px;
+  }
+  .result-btn {
+    justify-content: center;
+    align-items: center;
+  }
+  .btn {
+    height: 60px;
+  }
+  .payment {
+    font-size: 22px !important;
+    line-height: 20px !important;
+  }
+  .ppt {
+    width: 67px;
+    height: 48px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1120px) {
+  .app {
+    margin: 0 36px auto;
+  }
+  .title {
+    margin: 64px 0 46px 0 !important;
+  }
+  .result {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 85px;
+    row-gap: 44px;
+  }
+  .item:last-child {
+    margin-bottom: 37px;
+  }
+  .item:not(:last-child) {
+    margin-bottom: 30px;
+  }
+  .btn {
+    width: 345px !important;
+  }
+}
+@media screen and (min-width: 1120px) and (max-width: 1440px) {
+  .app {
+    margin: 0 47px auto;
+  }
+  .title {
+    margin: 213px 0 32px 0 !important;
+    max-width: 753px;
+  }
+  .container, .result {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .container {
+    margin-bottom: 54px;
+  }
+  .item {
+    min-width: 320px;
+    width: 33.3333333333%;
+  }
+  .item:not(:first-child) {
+    margin-left: 32px;
+  }
+  .btn {
+    min-width: 320px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .app {
+    margin-bottom: 213px;
+  }
+  .title {
+    margin: 213px 0 32px 0 !important;
+    max-width: 753px;
+  }
+  .container, .result {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .item {
+    min-width: 320px;
+    width: 33.3333333333%;
+  }
+  .item:not(:first-child) {
+    margin-left: 32px;
+  }
+}
 :root {
   --white: #ffffff;
   --main: #FF9514;
-  --hover: #000000;
-  --gray-text: #575757;
-  --gray-main: #E1E1E1;
+  --black: #000000;
+  --gray-text-small: #575757;
+  --gray-text-big: #333333;
+  --gray-main: #F3F3F4;
 }
 
 @font-face {
@@ -27,12 +143,34 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
-h1, h2 {
+h1, h3, input {
   font-family: "Nekst";
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  color: --gray-text-big;
 }
 
-h2, p, label {
-  color: var(--gray-text);
+h1 {
+  font-size: 54px;
+  line-height: 48.6px;
+}
+
+h3, input {
+  font-size: 30px;
+  line-height: 36px;
+}
+
+p {
+  font-family: "Gilroy", sans-serif;
+  color: var(--gray-text-small);
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+
+.result-item h1 {
+  color: --gray-text-big;
 }
 
 .description {
@@ -48,13 +186,112 @@ h2, p, label {
   cursor: pointer;
 }
 
-input {
+.item {
+  margin: auto;
+  height: 119px;
+  padding: 0 20px;
+}
+
+.fee-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.ppt {
+  width: 70px;
+  height: 54px;
+}
+
+input[type=number] {
+  background: var(--gray-main);
+  border: 0px;
+}
+
+.fee-field {
+  display: block !important;
+  width: 40px;
+  height: 40px;
+}
+
+span {
+  position: absolute;
+  left: 9px;
+}
+
+.field {
+  display: flex;
+  justify-content: space-between;
+  height: 68px;
+  margin-top: 24px;
+  background: var(--gray-main);
+  border-radius: 15px;
+}
+.field input {
   width: 100%;
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: 5px;
-  background-image: linear-gradient(#ff4500, #ff4500);
-  background-size: 70% 100%;
+  background: var(--gray-main);
+  border-radius: 25px;
+  border: 0px;
+  padding-left: 24px;
+}
+.field div {
+  background: var(--gray-main);
+  margin: 16px 24px 16px 0;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  top: 55px;
+}
+
+.inp-normal:active {
+  background: var(--white);
+  border: 0px;
+}
+.inp-normal:active .field {
+  background: var(--white);
+  border: var(--gray-main);
+}
+.inp-normal:active .symbol {
+  background: var(--white);
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 1px;
+  background: var(--main);
+}
+
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 0px 0px 0px #000000;
+  border: 0px solid #000000;
+  height: 40px;
+  width: 39px;
+  border-radius: 7px;
+  background: #65001C;
   cursor: pointer;
+  margin-top: -3.5px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: mediumpurple;
+  cursor: pointer;
+  margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #ffe72e;
 }
 
 /*# sourceMappingURL=main.css.map */

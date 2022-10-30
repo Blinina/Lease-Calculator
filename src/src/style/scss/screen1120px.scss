@@ -1,0 +1,29 @@
+@media screen and ( min-width: 1120px) and (max-width:1440px){
+    .app{
+        margin: 0 47px auto;
+    }
+    .title{
+        margin:213px 0 32px 0!important;
+        max-width: 753px;
+    }
+    .container, .result{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .container{
+   margin-bottom: 54px;
+    }
+    .item{
+        min-width: 320px;
+        width: calc(100% / 3);
+
+        &:not(:first-child){
+            margin-left: 32px;
+        }
+    }
+
+    .btn{
+        min-width: 320px;
+    }
+}

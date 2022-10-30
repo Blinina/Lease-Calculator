@@ -11,43 +11,59 @@ const  handleSubmit = (e)=>{
   console.log("kek");
 }
 const feeValue = Math.round(((fee * cost) / percent) * percent) / percent;
-const monthPay = (cost - feeValue) * ((interestRate * Math.pow((1 + interestRate), period)) / (Math.pow((1 + interestRate), period) - 1));
+const monthPay = Math.round((cost - feeValue) * ((interestRate * Math.pow((1 + interestRate), period)) / (Math.pow((1 + interestRate), period) - 1)));
 
   return (
-    <div className="App">
-     <form onSubmit={(e)=>handleSubmit(e)}> 
-      <h1>Рассчитайте стоимость автомобиля в лизинг</h1>   
-      <div>  
-      <label>Стоимость автомобиля
-      <input type ="range" value={cost} onChange={(e) => setCost(e.target.value)} id="cost" name="cost" min="1000000" max="6000000"/>
-      <output id="cost-value">{cost}₽</output>
-      </label>
-      </div>
-      <div>
-      <label>Первоначальный взнос
-        <p>{feeValue}</p>
-       <input type ="range" value={fee} onChange={(e) => setFee(e.target.value)} id="fee" name="fee" min="10" max="60"/>
-      <output id="fee-value">{fee}%</output>
-      </label>
-      </div>
-      <div>
-      <label>Срок лизинга
-      <input type ="range" value={period} onChange={(e) => setPeriod(e.target.value)} id="period" name="period" min="1" max="60"/>
-      <output id="period-value">{period} мес.</output>
-      </label>
-      </div>
-      <button type='submit' class="btn">Оставить заявку</button>
-     </form>
-     <div class="result">
-      <div>
-        <p class="sum-text" >Сумма договора лизинга</p>
-        <h2 class="sum">{feeValue+period*monthPay}₽</h2>
-      </div>
-      <div>
-        <p  class="payment-text" >Ежемесячный платеж от</p>
-        <h2 class="payment">{monthPay}₽</h2>
-      </div>
-     </div>
+    <div className="app">
+      <h1 className='title'>Рассчитайте стоимость автомобиля в лизинг</h1>
+      <form onSubmit={(e) => handleSubmit(e)}>
+        <div className="container">
+          <div className="item">
+            <p>Стоимость автомобиля</p>
+            <div className="inputs relative">
+              <div className="field">
+                <input type="number" className="inp-normal" value={cost} onChange={(e) => setCost(e.target.value)} />
+                <div class="symbol"><h3>₽</h3></div>
+              </div>
+              <input type="range" className="absolute" value={cost} onChange={(e) => setCost(e.target.value)} id="cost" name="cost" min="1000000" max="6000000" />
+            </div>
+          </div>
+          <div className="item">
+            <p>Первоначальный взнос</p>
+            <div className="inputs">
+              <div className="fee-container">
+                <p>{feeValue}</p>
+                <div className="ttf">
+                  <input type="number" className="fee-field" value={fee} onChange={(e) => setFee(e.target.value)} name="fee" />
+                  <span>%</span>
+                </div>
+              </div>
+              <input type="range" value={fee} onChange={(e) => setFee(e.target.value)} id="fee" name="fee" min="10" max="60" />
+            </div>
+          </div>
+          <div className="item">
+            <p>Срок лизинга</p>
+            <div className="inputs relative">
+            <div className="field">
+              <input type="number"  className="inp-normal" value={period} onChange={(e) => setPeriod(e.target.value)} />
+              <div class="symbol"><h3>мес.</h3></div>
+            </div>
+            <input type="range" className="absolute" value={period} onChange={(e) => setPeriod(e.target.value)} id="period" name="period" min="1" max="60" />
+          </div>
+          </div>
+        </div>
+        <div className="result">
+          <div className="result-item">
+            <p className="sum-text" >Сумма договора лизинга</p>
+            <h1 className="sum">{Math.round(feeValue + period * monthPay)}₽</h1>
+          </div>
+          <div className="result-item">
+            <p className="payment-text" >Ежемесячный платеж от</p>
+            <h1 className="payment">{monthPay}₽</h1>
+          </div>
+          <button type='submit' className="btn result-btn"><h3>Оставить заявку</h3></button>
+        </div>
+      </form>
     </div>
   );
 }

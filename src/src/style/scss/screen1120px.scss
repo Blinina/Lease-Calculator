@@ -1,9 +1,9 @@
 @media screen and ( min-width: 1120px) and (max-width:1440px){
     .app{
-        margin: 0 47px auto;
+        margin: 213px 48px;
     }
     .title{
-        margin:213px 0 32px 0!important;
+        margin-bottom:32px!important;
         max-width: 753px;
     }
     .container, .result{
@@ -13,6 +13,9 @@
     }
     .container{
    margin-bottom: 54px;
+    }
+    .result{
+        margin-bottom: 213px;
     }
     .item{
         min-width: 320px;

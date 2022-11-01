@@ -1,15 +1,19 @@
 @media screen and (min-width:1440px)  {
     .app{
-        margin-bottom: 213px;
+        margin: 213px 48px;
+        
     }
     .title{
-        margin:213px 0 32px 0!important;
+        margin-bottom:32px!important;
         max-width: 753px;
     }
     .container, .result{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+    }
+    .result{
+        margin-bottom: 213px;
     }
     .item{
         min-width: 320px;

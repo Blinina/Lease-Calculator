@@ -1,13 +1,4 @@
 @media screen and (max-width: 768px) {
-  h1 {
-    font-size: 34px !important;
-    font-weight: bold;
-    line-height: 30.6px !important;
-  }
-  h3, input {
-    font-size: 22px;
-    line-height: 20px;
-  }
   .app {
     margin: 0 20px auto;
   }
@@ -32,21 +23,13 @@
   .btn {
     height: 60px;
   }
-  .payment {
-    font-size: 22px !important;
-    line-height: 20px !important;
-  }
-  .ppt {
-    width: 67px;
-    height: 48px;
-  }
 }
 @media screen and (min-width: 768px) and (max-width: 1120px) {
   .app {
-    margin: 0 36px auto;
+    margin: 64px 36px auto;
   }
   .title {
-    margin: 64px 0 46px 0 !important;
+    margin: 0px 0 46px 0 !important;
   }
   .result {
     display: flex;
@@ -67,10 +50,10 @@
 }
 @media screen and (min-width: 1120px) and (max-width: 1440px) {
   .app {
-    margin: 0 47px auto;
+    margin: 213px 48px;
   }
   .title {
-    margin: 213px 0 32px 0 !important;
+    margin-bottom: 32px !important;
     max-width: 753px;
   }
   .container, .result {
@@ -80,6 +63,9 @@
   }
   .container {
     margin-bottom: 54px;
+  }
+  .result {
+    margin-bottom: 213px;
   }
   .item {
     min-width: 320px;
@@ -94,16 +80,19 @@
 }
 @media screen and (min-width: 1440px) {
   .app {
-    margin-bottom: 213px;
+    margin: 213px 48px;
   }
   .title {
-    margin: 213px 0 32px 0 !important;
+    margin-bottom: 32px !important;
     max-width: 753px;
   }
   .container, .result {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+  }
+  .result {
+    margin-bottom: 213px;
   }
   .item {
     min-width: 320px;
@@ -114,18 +103,20 @@
   }
 }
 :root {
-  --white: #ffffff;
+  --white: #FFFFFF;
   --main: #FF9514;
   --black: #000000;
+  --black-text: #111111;
   --gray-text-small: #575757;
   --gray-text-big: #333333;
   --gray-main: #F3F3F4;
+  --gray-fee: #e0e0e0;
 }
 
 @font-face {
   font-weight: 400;
   font-family: "Gilroy";
-  src: url("../fonts/Gilroy-Black.ttf");
+  src: url("../fonts/Gilroy-Medium.ttf");
 }
 @font-face {
   font-weight: 400;
@@ -143,32 +134,67 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
-h1, h3, input {
+h1,
+h3,
+input {
   font-family: "Nekst";
   font-weight: bold;
   margin: 0;
   padding: 0;
-  color: --gray-text-big;
-}
-
-h1 {
-  font-size: 54px;
-  line-height: 48.6px;
-}
-
-h3, input {
-  font-size: 30px;
-  line-height: 36px;
+  color: var(--gray-text-small);
 }
 
 p {
-  font-family: "Gilroy", sans-serif;
+  font-family: "Gilroy";
+  font-style: normal;
   color: var(--gray-text-small);
-  font-weight: normal;
+  font-weight: 400;
   margin: 0;
   padding: 0;
 }
 
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 54px;
+    line-height: 90%;
+    color: var(--black-text);
+  }
+  h3,
+input {
+    font-size: 30px;
+    line-height: 36px;
+  }
+  p {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .result-text {
+    line-height: 24px;
+    margin-bottom: 8px;
+  }
+  .sum {
+    color: var(--gray-text-big);
+  }
+}
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 34px;
+    font-weight: bold;
+    line-height: 30.6px;
+    color: var(--black-text);
+  }
+  h3, input {
+    font-size: 22px;
+    line-height: 20px;
+  }
+  p {
+    font-size: 14px;
+    line-height: 19.4px;
+  }
+  .result-text {
+    margin-bottom: 2px;
+  }
+}
 .result-item h1 {
   color: --gray-text-big;
 }
@@ -179,11 +205,13 @@ p {
 
 .btn {
   height: 68px;
-  color: var(--white);
   background: var(--main);
   border: 0px;
-  border-radius: 50px;
+  border-radius: 40px;
   cursor: pointer;
+}
+.btn h3 {
+  color: var(--white);
 }
 
 .item {
@@ -193,50 +221,15 @@ p {
 }
 
 .fee-container {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
-
-.ppt {
-  width: 70px;
-  height: 54px;
-}
-
-input[type=number] {
-  background: var(--gray-main);
-  border: 0px;
-}
-
-.fee-field {
-  display: block !important;
-  width: 40px;
-  height: 40px;
-}
-
-span {
-  position: absolute;
-  left: 9px;
-}
-
-.field {
-  display: flex;
-  justify-content: space-between;
-  height: 68px;
-  margin-top: 24px;
-  background: var(--gray-main);
-  border-radius: 15px;
-}
-.field input {
-  width: 100%;
-  background: var(--gray-main);
-  border-radius: 25px;
-  border: 0px;
+.fee-container h3 {
   padding-left: 24px;
-}
-.field div {
-  background: var(--gray-main);
-  margin: 16px 24px 16px 0;
+  text-overflow: clip;
 }
 
 .relative {
@@ -247,51 +240,80 @@ span {
   position: absolute;
   left: 24px;
   right: 24px;
-  top: 55px;
+  top: 65px;
 }
 
-.inp-normal:active {
-  background: var(--white);
+.field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 68px;
+  margin-top: 24px;
+  background: var(--gray-main);
+  border-radius: 16px;
+}
+.field input {
+  width: 100%;
+  background: var(--gray-main);
+  border-radius: 16px;
   border: 0px;
+  padding-left: 24px;
 }
-.inp-normal:active .field {
-  background: var(--white);
-  border: var(--gray-main);
+
+.symbols {
+  padding-right: 24px;
 }
-.inp-normal:active .symbol {
-  background: var(--white);
+
+.wrapper {
+  position: relative;
+  padding: 7px 7px 7px 0;
+  height: 54px;
+  width: 70px;
+}
+
+.fee-field {
+  height: 24px;
+  width: 33px !important;
+  padding: 15px 17px 15px 15px !important;
+  font-size: 20px;
+  border-radius: 16px !important;
+  background: var(--gray-fee) !important;
+}
+
+.wrapper span {
+  position: absolute;
+  left: 37px;
+  top: 22px;
+  font-size: 20px;
 }
 
 input[type=range]::-webkit-slider-runnable-track {
-  width: 100%;
-  height: 1px;
-  background: var(--main);
+  display: block;
+  box-sizing: border-box;
+  height: 2px;
+  background: #FF9514;
 }
 
 input[type=range]::-webkit-slider-thumb {
-  box-shadow: 0px 0px 0px #000000;
-  border: 0px solid #000000;
-  height: 40px;
-  width: 39px;
-  border-radius: 7px;
-  background: #65001C;
-  cursor: pointer;
-  margin-top: -3.5px;
+  background: #FF9514;
+  color: #FF9514;
+  width: 50px;
+  height: 20px;
+  margin-top: -9px;
+  border-radius: 50%;
 }
 
-input[type=range]::-webkit-slider-thumb {
-  border: 1px solid #000000;
-  height: 36px;
-  width: 16px;
-  border-radius: 3px;
-  background: mediumpurple;
-  cursor: pointer;
-  margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
+input[type=range]::-moz-range-track {
+  height: 2px;
+  background: #FF9514;
 }
 
-input[type=range]:focus::-webkit-slider-runnable-track {
-  background: #ffe72e;
+input[type=range]::-moz-range-thumb {
+  background: #FF9514;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: none;
 }
 
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=normalize.css.map */

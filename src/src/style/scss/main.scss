@@ -12,6 +12,7 @@
   --gray-text-big: #333333;
   --gray-main: #F3F3F4;
   --gray-fee: #e0e0e0;
+  --disabled: rgba(255, 149, 20, 0.4);
 
 }
 
@@ -38,6 +39,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+@mixin normal($hgt, $mt, $top, $rl) {
+  .wrapper-normal{
+    margin-top: $mt;
+    position: relative;
+    }
+    .inp-normal{
+      box-sizing: border-box;
+      height: $hgt;
+      width: 100%;
+      background: var(--gray-main);
+      border: 0px;
+      border-radius: 16px;
+      padding-left:  $rl;
+    }
+    .wrapper-normal span {
+      position: absolute;
+      top: $top;
+      right:  $rl;
+    }
+}
 
 h1,
 h3,
@@ -57,7 +78,9 @@ p {
   margin: 0;
   padding: 0;
 }
-
+.sum{
+  color: var(--gray-text-big);
+}
 @media screen and (min-width:768px){
 h1 {
   font-size: 54px;
@@ -78,9 +101,8 @@ p{
   line-height: 24px;
   margin-bottom: 8px;
 }
-.sum{
-  color: var(--gray-text-big);
-}
+@include normal(68px, 24px, 16px, 24px);
+
 }
 @media screen and (max-width:768px){
   h1{
@@ -102,18 +124,17 @@ p {
 .result-text{
   margin-bottom: 2px;
 }
+@include normal(60px, 8px, 20px, 20px);
+
 }
 .result-item {
   h1 {
     color: --gray-text-big;
   }
 }
-
-
 .description {
   visibility: hidden;
 }
-
 .btn {
   height: 68px;
   background: var(--main);
@@ -123,67 +144,49 @@ p {
   h3{
     color: var(--white);
   }
+  &:hover{
+    background: var(--black-text);
+  } 
+  &:active{
+    background: var(--gray-text-small);
+  }
+  &:disabled{
+    background: var(--disabled);
+  }
 
 }
-
 .item {
   margin: auto;
   height: 119px;
-  padding: 0 20px;
 }
-
 .fee-container {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
+  margin-top: 24px;
+  border-radius: 16px;
+  background-color:  var(--gray-main);
   h3 {
     padding-left: 24px;
     text-overflow: clip;
   }
 }
-
 .relative {
   position: relative;
 }
-
 .absolute {
   position: absolute;
   left: 24px;
   right: 24px;
   top: 65px;
 }
-.field {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 68px;
-  margin-top: 24px;
-  background: var(--gray-main);
-  border-radius: 16px;
-
-  input {
-    width: 100%;
-    background: var(--gray-main);
-    border-radius: 16px;
-    border: 0px;
-    padding-left: 24px;
-  }
-}
-
-.symbols {
-  padding-right: 24px;
-}
-
-
 .wrapper {
   position: relative;
   padding: 7px 7px 7px 0;
   height: 54px;
   width: 70px;
-
 }
 
 .fee-field {
@@ -192,7 +195,8 @@ p {
   padding: 15px 17px 15px 15px !important;
   font-size: 20px;
   border-radius: 16px!important;
-  background: var(--gray-fee) !important;
+  border: 0px;
+  background: var(--gray-fee);
 }
 
 .wrapper span {
@@ -200,21 +204,26 @@ p {
   left: 37px;
   top: 22px;
   font-size: 20px;
-
 }
 
+input[type="number"]:focus {
+  outline: none;  
+  background-color: var(--white);
+}
+.fee-field:focus  {
+  outline: none;  
+  background-color: var(--white);
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
-
-
-
-
-
-
-
-
-
-
-
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
 
 input[type="range"]::-webkit-slider-runnable-track {
   display: block;

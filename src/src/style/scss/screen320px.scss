@@ -1,3 +1,4 @@
+
 @media screen and (max-width:768px){
     .app{
         margin: 0 20px auto;
@@ -24,4 +25,31 @@
         height: 60px;
     }
 
+    // .wrapper-normal{
+    //     margin-top: 8px;
+    //     }
+    // .inp-normal{
+    //     height: 60px;
+    //     padding-left: 20px;
+    //   }
+    // .wrapper-normal span {
+    //     position: absolute;
+    //     top: 20px;
+    //     right: 20px;
+    //   }
+      
+
+}
+
+@media screen and (max-width:250px){
+    input{
+        font-size: calc(5px + 3vw)!important;
+    }
+    span{
+        font-size: calc(5px + 3vw)!important;
+        h3{
+            font-size: calc(5px + 3vw)!important;
+
+        }
+    }
 }

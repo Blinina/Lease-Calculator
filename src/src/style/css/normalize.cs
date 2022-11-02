@@ -319,7 +319,7 @@ input {
   font-size: 20px;
   border-radius: 16px !important;
   border: 0px;
-  background: var(--gray-fee);
+  background: var(--gray-fee) !important;
 }
 
 .wrapper span {
@@ -337,17 +337,6 @@ input[type=number]:focus {
 .fee-field:focus {
   outline: none;
   background-color: var(--white);
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
 }
 
 input[type=range]::-webkit-slider-runnable-track {
@@ -379,4 +368,4 @@ input[type=range]::-moz-range-thumb {
   border: none;
 }
 
-/*# sourceMappingURL=normalize.css.map */
+/*# sourceMappingURL=normalize.cs.map */

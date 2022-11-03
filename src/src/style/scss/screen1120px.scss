@@ -1,6 +1,6 @@
-@media screen and ( min-width: 1120px) and (max-width:1440px){
+@media screen and ( min-width: 1120px){
     .app{
-        margin: 213px 48px;
+        margin: 100px 48px;
     }
     .title{
         margin-bottom:32px!important;
@@ -9,12 +9,8 @@
     .container, .result{
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
         align-items: center;
-
-    }
-    .container{
-   margin-bottom: 54px;
+        justify-content: space-between;
     }
     .result{
         margin-bottom: 213px;
@@ -27,8 +23,17 @@
             margin-left: 32px;
         }
     }
+    .container{
+        margin-bottom: 54px;
+         }
+         .btn{
+             min-width: 320px;
+         }
+}
+
+@media screen and ( min-width: 1440px) {
 
     .btn{
-        min-width: 320px;
+        min-width: 420px;
     }
 }

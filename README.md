@@ -1,4 +1,4 @@
-### Test-project "leasing calculator"
+### Test-project "Lease Calculator"
 
 [**APP**](https://damp-woodland-41139.herokuapp.com/)
 ***

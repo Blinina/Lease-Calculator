@@ -77,7 +77,7 @@ function App() {
                   onChange={(e) => getCost(e)}
                   disabled={loading}
                 />
-                <span><h3 className={loading && "span-disable"}>₽</h3></span>
+                <span><h3 className={loading ? "span-disable" : undefined}>₽</h3></span>
               </div>
               <input
                 type="range"
@@ -96,7 +96,7 @@ function App() {
             <div className="relative">
               <div className="fee-input field ">
                 <div className="fee-container">
-                  <span><h3 className={loading && "span-disable"}>{feeValue}</h3></span>
+                  <span><h3 className={loading ? "span-disable" : undefined}>{feeValue}</h3></span>
                   <div className="wrapper">
                     <input
                       type="number"
@@ -106,7 +106,7 @@ function App() {
                       name="fee"
                       disabled={loading}
                     />
-                    <span className={loading && "span-disable"}>%</span>
+                    <span className={loading ? "span-disable" : undefined}>%</span>
                   </div>
                 </div>
               </div>
@@ -134,7 +134,7 @@ function App() {
                   onChange={(e) => getPeriod(e)}
                   disabled={loading}
                 />
-                <span><h3 className={loading && "span-disable"}>мес.</h3></span>
+                <span><h3 className={loading ? "span-disable" : undefined}>мес.</h3></span>
               </div>
               <input
                 type="range"

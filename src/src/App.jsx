@@ -1,12 +1,11 @@
 import { React, useState } from "react";
 import axios from 'axios';
 import {
-  url, minPrice, maxPrice, minPayment, maxPayment,
+  url, minPrice, maxPrice, minPayment, maxPayment, localeOptions,
   minPeriod, maxPeriod
 } from "./utils/utils";
 
 function App() {
-
   const interestRate = 0.035;
   const percent = 100;
   const [cost, setCost] = useState('3300000');
@@ -17,7 +16,7 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      isLoading(true)
+      isLoading(true);
       const data = {
         car_coast: cost,
         initail_payment: feeValue,
@@ -30,8 +29,8 @@ function App() {
       console.log(response.status);
       isLoading(false);
     } catch (error) {
-      console.log(error)
-      isLoading(false)
+      console.log(error);
+      isLoading(false);
     }
   }
 
@@ -47,7 +46,7 @@ function App() {
     if (value > maxPayment) {
       return;
     }
-    setFee(value)
+    setFee(value);
   }
   const getPeriod = (e) => {
     let { value } = e.target;
@@ -56,12 +55,6 @@ function App() {
     }
     setPeriod(value);
   }
-
-  const localeOptions = {
-    style: 'currency',
-    currency: 'RUB',
-    maximumFractionDigits: 0,
-  };
 
   const feeValue = Math.round(((fee * cost) / percent) * percent) / percent;
   const monthPay = Math.round((cost - feeValue) * ((interestRate * Math.pow((1 + interestRate), period)) / (Math.pow((1 + interestRate), period) - 1)));
@@ -170,6 +163,6 @@ function App() {
       </form>
     </div>
   );
-}
+};
 
 export default App;

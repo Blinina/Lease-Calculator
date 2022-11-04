@@ -1,28 +1,31 @@
-@media screen and (min-width:768px) and ( max-width: 1120px) {
-    .app{
+@media screen and (min-width:768px) and (max-width: 1120px) {
+    .app {
         margin: 64px 36px auto;
     }
-    .title{
-        margin:0px 0 46px 0!important;
+
+    .title {
+        margin: 0px 0 46px 0 !important;
     }
-    .result{
+
+    .result {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         column-gap: 85px;
         row-gap: 44px;
-    }   
+    }
 
-     .item{
-        &:last-child{
+    .item {
+        &:last-child {
             margin-bottom: 37px;
         }
 
-       &:not(:last-child){
-        margin-bottom: 30px;
+        &:not(:last-child) {
+            margin-bottom: 30px;
+        }
     }
-     }
-    .btn{
-        width: 345px!important;
-    }   
+
+    .btn {
+        width: 345px !important;
+    }
 }

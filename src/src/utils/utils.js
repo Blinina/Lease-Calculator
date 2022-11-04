@@ -5,4 +5,8 @@ export const minPayment = 10;
 export const maxPayment = 60;
 export const minPeriod = 1;
 export const maxPeriod = 60;
-
+export const localeOptions = {
+  style: 'currency',
+  currency: 'RUB',
+  maximumFractionDigits: 0,
+};
